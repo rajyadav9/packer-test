@@ -1,0 +1,10 @@
+{
+    "compression_level": "6",
+    "cpus": "1",
+    "disk_size": "40000",
+    "memory": "2048",
+    "ssh_timeout": "60m",
+    "ssh_username": "ubuntu",
+    "ssh_password": "ubuntu"
+}
+
