@@ -3,10 +3,8 @@
     
      "type": "vmware-vmx",
   "source_path": "/home/raj/bitbucket_potrero/predictive-health-gateway-devops/packer/vm/phg-0.5.1-rc.4-vmware/phg-0.5.1-rc.4-vmware.vmx",
-    "guest_os_type": "ubuntu-64",
     "output_directory": "Predictive-Health-Gateway-0.5.1-rc.4-{{build_type}}",
     "vm_name": "Predictive-Health-Gateway-0.5.1-rc.4",
-    "disk_size": "{{user `disk_size`}}",
     "headless": "{{user `headless`}}",
     "http_directory": "http",
     "boot_wait": "5s",
