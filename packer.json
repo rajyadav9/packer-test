@@ -46,7 +46,7 @@
     "compression_level": "",
     "cpus": "",
     "disk_size": "",
-    "headless": "false",
+    "headless": "true",
     "memory": "",
     "mirror": "http://releases.ubuntu.com",
     "ssh_timeout": "",
