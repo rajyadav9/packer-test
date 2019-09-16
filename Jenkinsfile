@@ -1,5 +1,5 @@
 node{
-  stage(exec the pipeline){
+  stage('exec the pipeline'){
 sh ```
 #export DISPLAY=localhost:0.0
 #curl -qL -o packer.zip https://releases.hashicorp.com/packer/0.12.3/packer_0.12.3_linux_amd64.zip && unzip packer.zip
