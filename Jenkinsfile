@@ -1,6 +1,6 @@
 node{
   stage('exec the pipeline'){
-sh ```
+sh """
 #export DISPLAY=localhost:0.0
 #curl -qL -o packer.zip https://releases.hashicorp.com/packer/0.12.3/packer_0.12.3_linux_amd64.zip && unzip packer.zip
 echo "Installing jq..."
@@ -22,6 +22,6 @@ echo "test1"
 sudo chmod 777 /var/lib/jenkins/workspace/packer-test
 #withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-cred']]) {
 #aws s3 cp /var/lib/jenkins/workspace/packer-test/phg-phg-0.5.1-rc.4-Vbox.zip s3://artifacts-vmware-phg/vmware-image
-aws s3 ls ```
+aws s3 ls """
 
 }
