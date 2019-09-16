@@ -20,7 +20,6 @@ sudo zip -r phg-phg-0.5.1-rc.4-Vbox.zip /var/lib/jenkins/workspace/packer-test/p
 fi
 echo "test1"
 sudo chmod 777 /var/lib/jenkins/workspace/packer-test
-#withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'aws-cred']]) 
 #aws s3 cp /var/lib/jenkins/workspace/packer-test/phg-phg-0.5.1-rc.4-Vbox.zip s3://artifacts-vmware-phg/vmware-image
 aws s3 ls """
 
