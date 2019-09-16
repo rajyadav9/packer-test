@@ -1,5 +1,6 @@
 node{
   stage('exec the pipeline'){
+  checkout scm
 sh """
 ls -l
 echo "test"
