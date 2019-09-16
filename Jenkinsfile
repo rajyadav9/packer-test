@@ -1,9 +1,9 @@
 node{
   stage('exec the pipeline'){
-  checkout scm
 sh """
 ls -l
 echo "test"
+git clone https://github.com/rajyadav9/packer-test.git
 if $image_type==vmware
 then
   ls -lrt
