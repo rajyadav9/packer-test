@@ -22,5 +22,5 @@ echo "test1"
 sudo chmod 777 /var/lib/jenkins/workspace/packer-test
 #aws s3 cp /var/lib/jenkins/workspace/packer-test/phg-phg-0.5.1-rc.4-Vbox.zip s3://artifacts-vmware-phg/vmware-image
 aws s3 ls """
-
+  }
 }
