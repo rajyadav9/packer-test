@@ -1,10 +1,6 @@
 node{
   stage('exec the pipeline'){
 sh """
-#export DISPLAY=localhost:0.0
-#curl -qL -o packer.zip https://releases.hashicorp.com/packer/0.12.3/packer_0.12.3_linux_amd64.zip && unzip packer.zip
-echo "Installing jq..."
-#curl -qL -o jq https://stedolan.github.io/jq/download/linux64/jq && chmod +x ./jq
 ls -l
 echo "test"
 if $image_type==vmware
