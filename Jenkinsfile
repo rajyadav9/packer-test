@@ -5,6 +5,8 @@ ls -l
 echo "test"
 if $image_type==vmware
 then
+  ls -lrt
+  echo "I did ls"
   /bin/packer build -var-file=vars.json packer.json
   echo "zip output files vmware"
   sudo zip -r Predictive-Health-Gateway-0.5.1-rc.4-vmware-iso.zip /var/lib/jenkins/workspace/packer-test/Predictive-Health-Gateway-0.5.1-rc.4-vmware-iso
