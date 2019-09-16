@@ -19,7 +19,9 @@ sudo zip -r phg-phg-0.5.1-rc.4-Vbox.zip /var/lib/jenkins/workspace/packer-test/p
 fi
 echo "test1"
 sudo chmod 777 /var/lib/jenkins/workspace/packer-test
-#aws s3 cp /var/lib/jenkins/workspace/packer-test/phg-phg-0.5.1-rc.4-Vbox.zip s3://artifacts-vmware-phg/vmware-image
+bucket=$bucket-name
+bucket= phg ${bucket} Vbox.zip"
+aws s3 cp /var/lib/jenkins/workspace/packer-test/$bucket s3://artifacts-vmware-phg/phg/$bucket/
 aws s3 ls """
   }
 }
