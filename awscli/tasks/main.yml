@@ -1,0 +1,48 @@
+---
+- name: Ensure pip is installed
+  apt: 
+    name: python-pip 
+    update_cache: yes
+    state: present
+
+- name: pip install awscli
+  pip: 
+    name: awscli 
+    state: present
+
+- name: Enable TAB completion for awscli
+  lineinfile:
+    dest: "/home/{{ awscli_users.username }}/.bashrc"
+    line: "complete -C aws_completer aws"
+    state: "{{ item.state | default('present') }}"
+  with_items: awscli_users
+
+- name: Ensure .aws directory under user home for awscli config 
+  file:  
+    path: "/home/{{ awscli_users.username }}/.aws"
+    state: directory
+    owner: "{{ awscli_users.username }}"
+    group: "{{ awscli_users.username }}"
+    mode: 0755
+    #when: item.get('state', 'present') == 'present'
+  with_items: awscli_users
+
+- name: Copy awscli config to remote server
+  template:  
+    src: awscli_config.j2
+    dest: "/home/{{ awscli_users.username }}/.aws/config" 
+    owner: "{{ awscli_users.username }}"
+    group: "{{ awscli_users.username }}"
+    mode: 0644
+    #when: item.get('state', 'present') == 'present'
+    #with_items: awscli_users
+- name: Copy awscli credentials to remote server
+  template:
+    src: awscli_credentials.j2
+    dest: "/home/{{ awscli_users.username }}/.aws/credentials"
+    owner: "{{ awscli_users.username }}"
+    group: "{{ awscli_users.username }}"
+    mode: 0644
+    #when: item.get('state', 'present') == 'present'
+    #with_items: awscli_users
+
