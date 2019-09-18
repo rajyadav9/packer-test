@@ -3,7 +3,7 @@ awscli_users:
     username: phg
     state: present
     awscli:
-        aws_region: 
+        aws_region: us-east-1
         aws_output_format: table # format can be 'text','table' and 'json'
         aws_access_key_id: '{{lookup("env","AWS_ACCESS_KEY")}}'
         aws_secret_access_key: '{{lookup("env","AWS_SECRET_KEY")}}'
